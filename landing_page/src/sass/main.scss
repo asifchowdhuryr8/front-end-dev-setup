@@ -1,0 +1,13 @@
+@import "base/typography";
+
+h1{
+  color: red;
+}
+
+img {
+  width: 100%;
+}
+// Adding prefix to the css property
+.example {
+    user-select: none;
+}
