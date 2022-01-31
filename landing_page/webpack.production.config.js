@@ -3,6 +3,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// FOR PURGE CSS TO WORK START
+const glob = require('glob')
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+
+const PurgeCssPluginPATHS = {
+    src: path.join(__dirname, 'src')
+}
+// FOR PURGE CSS TO WORK END
+
+
 module.exports = {
     entry: './src/index.ts',
     output: {
@@ -20,7 +30,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|jpe?g|gif)$/i,
+                test: /\.(svg|png|jpe?g|gif)$/i,
                 loader: 'file-loader',
                 options: {
                     name: '[path]/[name].[ext]',
@@ -29,7 +39,15 @@ module.exports = {
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'
+                    MiniCssExtractPlugin.loader, {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 2,
+                            url: false
+                        }
+                    },
+                    'postcss-loader',
+                    'sass-loader'
                 ]
             },
             {
@@ -52,6 +70,9 @@ module.exports = {
             description: 'Hello world',
             template: 'src/index.html',
             publicPath: ''
+        }),
+        new PurgecssPlugin({
+            paths: glob.sync(`${PurgeCssPluginPATHS.src}/**/*`, { nodir: true }),
         })
     ]
 };

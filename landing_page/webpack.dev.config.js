@@ -23,7 +23,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|jpe?g|gif)$/i,
+                test: /\.(svg|png|jpe?g|gif)$/i,
                 loader: 'file-loader',
                 options: {
                     name: '[path]/[name].[ext]',
@@ -32,7 +32,15 @@ module.exports = {
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'
+                    MiniCssExtractPlugin.loader, {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 2,
+                            url: false
+                        }
+                    },
+                    'postcss-loader',
+                    'sass-loader'
                 ]
             },
             {
