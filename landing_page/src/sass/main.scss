@@ -1,4 +1,9 @@
-@import "base/typography";
+@import "base/_variables";
+@import "base/_typography";
+
+body{
+    margin: 0;
+}
 
 h1 {
     color: $purple;
@@ -27,6 +32,12 @@ img {
     background-color: $black;
     color: $white;
 }
+
+// Header styles
+@import "components/header";
+
+// Footer styles
+@import "components/footer";
 
 // This unused classes will remove in production mode with purgecss
 .purple {
