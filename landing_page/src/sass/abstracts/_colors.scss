@@ -1,14 +1,10 @@
 :root{
+    --white: hsl(0, 0%, 100%);
     --gray-light: hsl(240, 5%, 88%);
     --gray-dark: hsl(0, 0%, 20%);
-    --white: hsl(0, 0%, 100%);
     --dark-blue: hsl(240, 56%, 9%);
 }
 
 $color-gray-dark: hsla(0, 0%, 87%, 0.867);
 $purple: hsl(300, 100%, 25%);
 $black: hsl(0, 0%, 0%);
-$white: hsl(0, 0%, 100%);
-$unused-var1: hsl(10, 10%, 10%);
-$unused-var2: hsl(20, 20%, 20%);
-$unused-var3: hsl(30, 30%, 30%);

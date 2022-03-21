@@ -1,12 +1,15 @@
-@import "base/_variables";
-@import "base/_typography";
+@use "sass:meta";   // @use must be written before any other @import rules
+@use "abstracts/_index";
+@use "base/_typography";
+@use "abstracts/colors";
+
 
 body{
     margin: 0;
 }
 
 h1 {
-    color: $purple;
+    color: colors.$purple;
 }
 
 img {
@@ -29,19 +32,19 @@ img {
 }
 
 .js-purgecss-test {
-    background-color: $black;
-    color: $white;
+    background-color: colors.$black;
+    color: var(--white);
 }
 
 // Header styles
-@import "components/header";
+@include meta.load-css("components/header");
 
 // Footer styles
-@import "components/footer";
+@include meta.load-css("components/footer");
 
 // This unused classes will remove in production mode with purgecss
 .purple {
-    background-color: $purple;
+    background-color: colors.$purple;
 }
 
-@import "unusedcss";
+@include meta.load-css("unusedcss");

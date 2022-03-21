@@ -1,0 +1,9 @@
+// If We use :root in different scss files, It creates :root multiple times when compiling.
+:root{
+    --spacer: 1rem;
+    --unused-css-var: 2rem; // SASS compiler cannot remove unused css variable in production mode.
+}
+
+$unused-sass-var1: 1rem;
+$unused-sass-var2: 2rem;
+$unused-sass-var3: 3rem;
