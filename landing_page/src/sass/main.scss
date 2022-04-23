@@ -1,40 +1,7 @@
-@use "sass:meta";   // @use must be written before any other @import rules
-@use "abstracts/_index";
-@use "base/_typography";
-@use "abstracts/colors";
-
-
-body{
-    margin: 0;
-}
-
-h1 {
-    color: colors.$purple;
-}
-
-img {
-    display: block;
-    height: auto;
-    max-width: 100%;
-}
-
-// Adding prefix to the css property
-.example {
-    user-select: none;
-}
-
-.bg {
-    background-image: url("../images/ocean-at-dawn.jpg");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 1000px;
-}
-
-.js-purgecss-test {
-    background-color: colors.$black;
-    color: var(--white);
-}
+@use "sass:meta"; // '@use' must be written before '@import' rules if you use '@import'.
+@use "abstracts"as *;
+@use "base";
+@use "pages/_home";
 
 // Header styles
 @include meta.load-css("components/header");
@@ -44,7 +11,8 @@ img {
 
 // This unused classes will remove in production mode with purgecss
 .purple {
-    background-color: colors.$purple;
+    background-color: $purple;
 }
 
-@include meta.load-css("unusedcss");
+// SWITCH TO CLEAN BRANCH. Goto variables file and tweak font sizes value. after that delete the font size file.
+// NOTE:  Just fix the above problem and commit.
