@@ -1,0 +1,56 @@
+@use "sass:meta";   // @use must be written before any other @import rules
+@use "abstracts/_index";
+@use "base/_typography";
+@use "abstracts/colors";
+
+
+body{
+    margin: 0;
+}
+
+h1 {
+    color: colors.$purple;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+// Adding prefix to the css property
+.example {
+    user-select: none;
+}
+
+.bg {
+    background-image: url("../images/ocean-at-dawn.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 1000px;
+}
+
+// purgecss dynamic js classes
+.js-purgecss-test {
+    background-color: colors.$black;
+    color: var(--white);
+}
+
+.js-purgecss-test-2 {
+    background-color: colors.$purple;
+    color: var(--white);
+}
+
+// Header styles
+@include meta.load-css("components/header");
+
+// Footer styles
+@include meta.load-css("components/footer");
+
+// This unused classes will remove in production mode with purgecss
+.purple {
+    background-color: colors.$purple;
+}
+
+@include meta.load-css("unusedcss");
