@@ -1,0 +1,6 @@
+@use "../abstracts"as *;
+
+.js-purgecss-test-2 {
+    background-color: $purple;
+    color: var(--white);
+}
