@@ -1,5 +1,10 @@
 @use "../abstracts"as *;
 
+// This unused classes will remove in production mode with purgecss
+.purple {
+    background-color: $purple;
+}
+
 // <---------------------------- WHITE SPACING ------------------------------->#
 @each $s-size,
 $s-value in $spacing-sizes {

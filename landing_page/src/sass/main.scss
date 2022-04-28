@@ -1,18 +1,5 @@
 @use "sass:meta"; // '@use' must be written before '@import' rules if you use '@import'.
-@use "abstracts"as *;
 @use "base";
+@use "components";
+@use "layout";
 @use "pages/_home";
-
-// Header styles
-@include meta.load-css("components/header");
-
-// Footer styles
-@include meta.load-css("components/footer");
-
-// This unused classes will remove in production mode with purgecss
-.purple {
-    background-color: $purple;
-}
-
-// SWITCH TO CLEAN BRANCH. Goto variables file and tweak font sizes value. after that delete the font size file.
-// NOTE:  Just fix the above problem and commit.
