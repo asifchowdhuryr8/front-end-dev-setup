@@ -1,29 +1,5 @@
 @use "../abstracts"as *;
 
-.example {
-    color: $purple;
-    line-height: 1.1;
-    text-align: center;
-    font-size: var(--fs-600);
-
-    // How to use the media query.
-    @include mq(phone) {
-        color: var(--dark-blue);
-    }
-}
-
-.bg {
-    background-image: url("../images/ocean-at-dawn.jpg");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 1000px;
-}
-
-This unused classes will remove in production mode with purgecss .purple {
-    background-color: $purple;
-}
-
 // <---------------------------- WHITE SPACING ------------------------------->#
 @each $s-size,
 $s-value in $spacing-sizes {
