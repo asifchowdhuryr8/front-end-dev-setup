@@ -1,4 +1,5 @@
 // We must use the '@use' method to access the below modules. We can use @use rule also. We still can use import rule but you need to use migrator tool to convert it to @use rule.
-@forward "_variables";
-@forward "_colors";
-@forward "_fonts";
+@forward "../abstracts/_variables";
+@forward "../abstracts/_colors";
+@forward "../abstracts/_fonts";
+@forward "../abstracts/_mixins";

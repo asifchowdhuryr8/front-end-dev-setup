@@ -1,4 +1,45 @@
-:root{
-    --fw-700: 700;
-    --fs-600: calc(var(--spacer) * 3);
+@use "./variables"as *;
+@use "./mixins"as *;
+
+// If We use :root in different scss files, It creates :root multiple times in main css file when compiling.
+:root {
+
+    @each $screen-size,
+    $font-size in $font-sizes {
+        @if $screen-size==regular {
+
+            @each $size,
+            $value in $font-size {
+                --fs-#{$size}: #{$value};
+            }
+        }
+    }
+
+    @include mq(tab-port-up) {
+
+        @each $screen-size,
+        $font-size in $font-sizes {
+            @if $screen-size==medium {
+
+                @each $size,
+                $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        }
+    }
+
+    @include mq(desktop-up) {
+
+        @each $screen-size,
+        $font-size in $font-sizes {
+            @if $screen-size==large {
+
+                @each $size,
+                $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        }
+    }
 }
