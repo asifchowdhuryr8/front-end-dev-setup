@@ -1,16 +1,8 @@
 @use "sass:meta";   // @use must be written before any other @import rules
-@use "abstracts/_index";
+@use "abstracts" as *;
 @use "base/_typography";
 @use "abstracts/colors";
 
-
-body{
-    margin: 0;
-}
-
-h1 {
-    color: colors.$purple;
-}
 
 img {
     display: block;
@@ -20,6 +12,9 @@ img {
 
 // Adding prefix to the css property
 .example {
+    color: $purple;
+    font-size: var(--fs-600);
+    font-weight: var(--fw-700);
     user-select: none;
 }
 
