@@ -1,4 +1,4 @@
-const header = document.querySelector("#header");
+const header = document.querySelector('#header');
 header?.insertAdjacentHTML(
     'beforeend',
     `<nav>
@@ -7,5 +7,5 @@ header?.insertAdjacentHTML(
             <li><a class="header-link" href="work.html">Work</a></li>
             <li><a class="header-link" href="contact.html">Contact</a></li>
         </ul>
-    </nav>`
+    </nav>`,
 );

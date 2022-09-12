@@ -1,6 +1,6 @@
 const footer = document.querySelector('#footer');
 footer?.insertAdjacentHTML(
-    "beforeend",
+    'beforeend',
     `<ul>
         <li><a class="footer-link" href="about.html">About</a></li>
         <li><a class="footer-link" href="work.html">Work</a></li>
@@ -22,5 +22,5 @@ footer?.insertAdjacentHTML(
                 <i class="fab fa-linkedin"></i>
             </a>
         </li>
-    </ul>`
+    </ul>`,
 );

@@ -1,13 +1,16 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+
 
 module.exports = {
     entry: './src/index.ts',
     output: {
         filename: 'src/js/[name].js',
         path: path.resolve(__dirname, './dist'),
+        publicPath: 'auto',
+        clean: true,
     },
     mode: 'development',
     devServer: {
@@ -46,7 +49,8 @@ module.exports = {
             {
                 test: /\.ts$/,
                 use: 'ts-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/,
+                enforce: 'pre'
             }
         ]
     },
@@ -57,12 +61,15 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'src/css/[name].css'
         }),
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Hello world',
             description: 'Hello world',
             template: 'src/index.html',
-            publicPath: ''
+        }),
+        new ESLintPlugin({
+            extensions: ['.js', '.ts'],
+            exclude: ['node_modules', 'dist'],
+            fix: true
         })
     ]
 };

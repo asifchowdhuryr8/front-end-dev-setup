@@ -1,3 +1,3 @@
-import "./images/images";
-import "./sass/main.scss";
-import "./typescript/app";
+import './images/images.ts';
+import './sass/main.scss';
+import './typescript/app.ts';

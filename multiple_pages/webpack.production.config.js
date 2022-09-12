@@ -1,7 +1,8 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+
 
 // FOR PURGE CSS TO WORK START
 const glob = require('glob')
@@ -18,6 +19,8 @@ module.exports = {
     output: {
         filename: 'src/js/[name].js',
         path: path.resolve(__dirname, './dist'),
+        publicPath: 'auto',
+        clean: true,
     },
     mode: 'production',
     optimization: {
@@ -64,20 +67,22 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'src/css/[name].css'
         }),
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             title: 'Page title',
             description: 'Page description',
             template: 'src/templates/index.html',
-            publicPath: ''
         }),
         new HtmlWebpackPlugin({
             filename: 'about.html',
             title: 'Page title',
             description: 'Page description',
             template: 'src/templates/about.html',
-            publicPath: ''
+        }),
+        new ESLintPlugin({
+            extensions: ['.js', '.ts'],
+            exclude: ['node_modules', 'dist'],
+            failOnWarning: true,
         }),
         new PurgecssPlugin({
             paths: glob.sync(`${PurgeCssPluginPATHS.src}/**/*`, { nodir: true }),

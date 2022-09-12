@@ -1,2 +1,2 @@
-import './components/_header';
-import './components/_footer';
+import './components/_header.ts';
+import './components/_footer.ts';
