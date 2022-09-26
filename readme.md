@@ -21,7 +21,7 @@ npm run all
 If you want to install new versions of the packages then **remove the devDependencies object** from the **package.json** file and run the following command.
 
 ```shell
-npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser autoprefixer CSS-loader eslint eslint-config-airbnb-base eslint-webpack-plugin file-loader glob html-webpack-plugin mini-CSS-extract-plugin npm-run-all postcss-loader purgecss-webpack-plugin sass sass-loader sass-migrator ts-loader typescript  webpack webpack-cli webpack-dev-server -D
+npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser autoprefixer css-loader eslint eslint-config-airbnb-base eslint-webpack-plugin file-loader glob html-webpack-plugin mini-css-extract-plugin npm-run-all postcss-loader purgecss-webpack-plugin sass sass-loader sass-migrator ts-loader typescript  webpack webpack-cli webpack-dev-server -D
 ```
 
 <h2 align="center">Webpack configurations</h2>

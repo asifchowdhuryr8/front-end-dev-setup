@@ -6,9 +6,9 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 
 // FOR PURGE CSS TO WORK START
 const glob = require('glob')
-const PurgecssPlugin = require('purgecss-webpack-plugin');
+const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
 
-const PurgeCssPluginPATHS = {
+const PurgeCSSPluginPATHS = {
     src: path.join(__dirname, 'src')
 }
 // FOR PURGE CSS TO WORK END
@@ -78,8 +78,8 @@ module.exports = {
             exclude: ['node_modules', 'dist'],
             failOnWarning: true,
         }),
-        new PurgecssPlugin({
-            paths: glob.sync(`${PurgeCssPluginPATHS.src}/**/*`, { nodir: true }),
+        new PurgeCSSPlugin({
+            paths: glob.sync(`${PurgeCSSPluginPATHS.src}/**/*`, { nodir: true }),
         })
     ]
 };
