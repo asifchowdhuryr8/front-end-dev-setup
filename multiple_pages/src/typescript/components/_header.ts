@@ -1,11 +1,2 @@
-const header = document.querySelector('#header');
-header?.insertAdjacentHTML(
-    'beforeend',
-    `<nav>
-        <ul>
-            <li><a class="header-link" href="about.html">About</a></li>
-            <li><a class="header-link" href="work.html">Work</a></li>
-            <li><a class="header-link" href="contact.html">Contact</a></li>
-        </ul>
-    </nav>`,
-);
+const header = document.querySelector('#navigation');
+header?.insertAdjacentHTML('beforeend', '<div class="container navbar"><div><a class="brand-title" href="index.html">DevSetup</a></div><div class="toggle-button"><span class="bar"></span><span class="bar"></span></div><div class="navbar-links"><ul class="nav"><li class="nav__item"><a class="nav__link" href="index.html">Home</a></li></ul></div></div>');

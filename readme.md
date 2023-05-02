@@ -21,7 +21,7 @@ npm run all
 If you want to install new versions of the packages then **remove the devDependencies object** from the **package.json** file and run the following command.
 
 ```shell
-npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser autoprefixer css-loader eslint eslint-config-airbnb-base eslint-webpack-plugin file-loader glob html-webpack-plugin mini-css-extract-plugin npm-run-all postcss-loader purgecss-webpack-plugin sass sass-loader sass-migrator ts-loader typescript  webpack webpack-cli webpack-dev-server -D
+npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser autoprefixer css-loader eslint eslint-config-airbnb-base eslint-webpack-plugin file-loader glob html-webpack-plugin mini-css-extract-plugin npm-run-all postcss-loader purgecss-webpack-plugin sass sass-loader sass-migrator ts-loader typescript webpack webpack-cli webpack-dev-server -D
 ```
 
 <h2 align="center">Webpack configurations</h2>
@@ -38,8 +38,9 @@ Generally, used for small landing page websites.
 
 ```js
     entry: {
-        'home': './src/index.ts',
-        'about': './src/index.ts'
+        'base': './src/typescript/pages/base.ts',
+        'index': './src/typescript/pages/index.ts',
+        'about': './src/typescript/pages/about.ts',
     }
 ```
 
@@ -101,7 +102,7 @@ NOTE: You can use this plugin to create multiple HTML files. Use once for single
 
 - ```template: 'src/templates/index.html'``` The template file to generate the destination directory HTML file.
 
-- ```chunks: ['home']``` Specify which CSS and JS files as well as images this HTML file should use.
+- ```chunks: ['base', 'index']``` Specify which CSS and JS files as well as images this HTML file should use.
 
 For example, in this case, it only uses those CSS, JS, and images that are imported into the home (home is the key of the entry object).
 
@@ -111,17 +112,19 @@ NOTE: USE THIS OPTION ONLY IF YOU USE CODE SPLITTING
 module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            chunks: ['home'],
-            title: 'Page title',
-            description: 'Page description',
+            chunks: ['base', 'index'],
+            title: 'Home page title',
+            description: 'Home page description',
             template: 'src/templates/index.html',
+            publicPath: ''
         }),
         new HtmlWebpackPlugin({
             filename: 'about.html',
-            chunks: ['about'],
-            title: 'Page title',
-            description: 'Page description',
+            chunks: ['base', 'about'],
+            title: 'About page title',
+            description: 'About page description.',
             template: 'src/templates/about.html',
+            publicPath: ''
         })
 };
 ```

@@ -15,7 +15,11 @@ const PurgeCSSPluginPATHS = {
 
 
 module.exports = {
-    entry: './src/index.ts',
+    entry: {
+        'base': './src/typescript/pages/base.ts',
+        'index': './src/typescript/pages/index.ts',
+        'about': './src/typescript/pages/about.ts',
+    },
     output: {
         filename: 'src/js/[name].js',
         path: path.resolve(__dirname, './dist'),
@@ -69,15 +73,19 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            title: 'Page title',
-            description: 'Page description',
+            chunks: ['base', 'index'],
+            title: 'Home page title',
+            description: 'Home page description',
             template: 'src/templates/index.html',
+            publicPath: ''
         }),
         new HtmlWebpackPlugin({
             filename: 'about.html',
-            title: 'Page title',
-            description: 'Page description',
+            chunks: ['base', 'about'],
+            title: 'About page title',
+            description: 'About page description.',
             template: 'src/templates/about.html',
+            publicPath: ''
         }),
         new ESLintPlugin({
             extensions: ['.js', '.ts'],
