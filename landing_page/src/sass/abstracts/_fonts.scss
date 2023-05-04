@@ -1,7 +1,6 @@
 @use "./variables"as *;
 @use "./mixins"as *;
 
-// If We use :root in different scss files, It creates :root multiple times in main css file when compiling.
 :root {
 
     @each $screen-size,

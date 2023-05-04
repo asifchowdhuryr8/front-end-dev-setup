@@ -1,4 +1,14 @@
-@use "../abstracts"as *;
+@use "../abstracts" as *;
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1600px;
+}
+
+.text-center{
+    text-align: center;
+}
 
 // <---------------------------- WHITE SPACING ------------------------------->#
 @each $s-size,
@@ -25,4 +35,8 @@ $value in $fg-positions {
     @include layout-alignment($selector, $value, a);
     @include layout-alignment($selector, $value, a, $property-variation: items);
     @include layout-alignment($selector, $value, a, $property-variation: self);
+}
+
+.flex {
+    display: flex;
 }
