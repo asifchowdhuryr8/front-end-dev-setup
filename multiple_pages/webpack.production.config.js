@@ -16,7 +16,7 @@ const PurgeCSSPluginPATHS = {
 
 module.exports = {
     entry: {
-        'base': './src/typescript/pages/base.ts',
+        'base': './src/typescript/pages/_base.ts',
         'index': './src/typescript/pages/index.ts',
         'about': './src/typescript/pages/about.ts',
     },

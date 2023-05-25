@@ -1,3 +1,3 @@
-import './images/images.ts';
 import './sass/main.scss';
-import './typescript/app.ts';
+import './images/images.ts';
+import './typescript/components.ts';

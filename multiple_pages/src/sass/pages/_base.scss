@@ -1,14 +1,9 @@
+@use "../base";
+@use "../layout";
+@use "../components/_header.scss";
+@use "../components/_footer.scss";
+
 .page-layout {
     display: grid;
     grid-template-rows: auto auto 1fr auto;
-}
-
-.highlight {
-    color: var(--red);
-    background-color: transparent;
-}
-
-.optional-text {
-    background-color: transparent;
-    color: var(--optional);
 }
