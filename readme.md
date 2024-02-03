@@ -1,30 +1,56 @@
-<h1 align="center"> Frontend development setup with Webpack </h1>
+# Front-end Development Setup with Webpack
 
-### Quick Start
+This project is a template for setting up a front-end development environment with Webpack, a popular module bundler and build tool. It includes the following features:
+
+- TypeScript support for writing type-safe code
+- ESLint for code formatting and linting
+- Sass and PostCSS for styling and CSS processing
+- HTML Webpack Plugin for generating HTML files from templates
+- Mini CSS Extract Plugin for extracting CSS files from JavaScript
+- PurgeCSS Webpack Plugin for removing unused CSS
+- File Loader for loading images and fonts
+- Webpack Dev Server for live reloading and development server
+
+This project is suitable for vanilla landing page websites or multi-page websites. It also follows the Airbnb JavaScript Style Guide and uses npm scripts for running common tasks.
+
+## Quick Start
 
 Go to the project directory and run the following command:
 
-```shell
+```sh
 run npm i
 ```
 
-### NPM scripts
+## NPM scripts
 
-```shell
+```sh
 npm run dev
 npm run build
 npm run all
 ```
 
-<h2 align="center">Install the latest version of dev dependencies</h2>
+## Install the latest version of dev dependencies
 
-If you want to install new versions of the packages then **remove the devDependencies object** from the **package.json** file and run the following command.
+If you want to install new versions of the packages then **remove the devDependencies object** from the **package.json** file, delete the **package-lock.json** file and run the following command.
 
-```shell
+```sh
 npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser autoprefixer css-loader eslint eslint-config-airbnb-base eslint-webpack-plugin file-loader glob html-webpack-plugin mini-css-extract-plugin npm-run-all postcss-loader purgecss-webpack-plugin sass sass-loader sass-migrator ts-loader typescript webpack webpack-cli webpack-dev-server -D
 ```
 
-<h2 align="center">Webpack configurations</h2>
+## Configuration files
+
+The project configuration is located in the following files:
+
+- `webpack.dev.config.js` for Webpack development settings
+- `webpack.production.config.js` for Webpack production settings
+- `tsconfig.json` for TypeScript settings
+- `.eslintrc` for ESLint settings
+- `.eslintignore` for ignoring ESLint settings
+- `postcss.config.js` for PostCSS settings
+
+You can modify these files according to your needs and preferences.
+
+## Webpack configurations
 
 ### One file(CSS and JavaScript) for the entire project
 
@@ -140,3 +166,7 @@ module.exports = {
         fix: true
     })
 ```
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
